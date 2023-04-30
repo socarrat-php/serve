@@ -1,0 +1,34 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch example and debug",
+			"type": "php",
+			"request": "launch",
+			"runtimeArgs": [
+				"-S",
+				"localhost:8020",
+				"-t",
+				"./examples/hello-world/"
+			],
+			"port": 9003
+		},
+		{
+			"name": "Launch example and profile",
+			"type": "php",
+			"request": "launch",
+			"runtimeArgs": [
+				"-S",
+				"localhost:8020",
+				"-t",
+				"./examples/hello-world/"
+			],
+			"port": 9003,
+			"noDebug": true,
+			"profile": true
+		}
+	]
+}
