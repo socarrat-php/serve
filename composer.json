@@ -1,0 +1,18 @@
+{
+	"name": "socarrat/core",
+	"description": "The Socarrat core library takes care of basic tasks such as routing and HTTP communication.",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Socarrat\\Core\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Romein van Buren",
+			"email": "romein@vburen.nl"
+		}
+	],
+	"require": {}
+}
