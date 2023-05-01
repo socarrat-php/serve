@@ -21,7 +21,7 @@ class HttpRequest {
 		$this->contentType = $contentType;
 	}
 
-	public function getBody() {
+	public function body() {
 		if ($this->method == 'GET') {
 			return '';
 		}
@@ -34,7 +34,7 @@ class HttpRequest {
 		return $body;
 	}
 
-	public function getJSON() {
+	public function json() {
 		if ($this->method == 'GET') {
 			return [];
 		}
