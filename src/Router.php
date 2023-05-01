@@ -95,7 +95,11 @@ class Router {
 	 * @param string $route The requested path.
 	 * @return ?RouteHandler The route callback if the route has been found.
 	 */
-	public function find(string $route): ?RouteHandler {
+	public function find(?string $route): ?RouteHandler {
+		if ($route === null) {
+			return null;
+		}
+
 		$segments = Router::splitPath($route);
 		$branch =& $this->handlers;
 

@@ -14,7 +14,7 @@ abstract class Event {
 	 * An array of event listeners to call when the event is dispatched.
 	 * @var callable[]
 	 */
-	abstract static protected array $listeners = array();
+	static protected array $listeners = array();
 
 	/** Returns the name of the event. */
 	static function getName(): string {
