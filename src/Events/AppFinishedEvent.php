@@ -19,5 +19,6 @@ AppFinishedEvent::on(0, function(App $app) {
 	if (!$app->router->responseSent()) {
 		http_response_code(404);
 		header("Content-Type: text/plain");
+		header("X-Powered-By: Socarrat");
 	}
 });
