@@ -7,6 +7,7 @@
  */
 
 namespace Socarrat\Core;
+use Socarrat\Core\Exceptions\IHttpResponderException;
 
 class RouteHandler {
 	protected readonly string $path;
@@ -56,7 +57,19 @@ class RouteHandler {
 		if (!$this->canHandleMethod($req->method)) {
 			return null;
 		}
-		return ($this->callback)($req);
+
+		try {
+			$res = ($this->callback)($req);
+			return $res;
+		}
+		catch (\Exception $e) {
+			if (in_array("IHttpResponderException", class_implements($e))) {
+				$res = $e->getResponse($req);
+				return $res;
+			}
+			// @todo: error
+			return (new HttpResponse())->setStatusCode(500)->json([ "ok" => false ]);
+		}
 	}
 
 	/** Parses path params using the given path and returns them in the form of an associative array. */
