@@ -23,10 +23,6 @@ class App {
 		$this->router = new Router();
 	}
 
-	public function registerPlugin() {
-
-	}
-
 	/** Run the app. */
 	public function run() {
 		AppStartEvent::dispatch($this);
