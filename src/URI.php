@@ -88,15 +88,8 @@ class URI {
 
 		$parsedUri = parse_url($_SERVER["REQUEST_URI"]);
 		$uri->path = $parsedUri["path"] ?? "/";
-		$uri->query = array();
+		$uri->query = $_GET ?? [];
 		$uri->fragment = $parsedUri["fragment"] ?? "";
-
-		if (($parsedUri["query"] ?? "") != "") {
-			foreach (explode("&", $parsedUri["query"]) as $str) {
-				$parts = explode("=", $str);
-				$uri->query[array_shift($parts)] = implode("=", $parts);
-			}
-		}
 
 		return $uri;
 	}
