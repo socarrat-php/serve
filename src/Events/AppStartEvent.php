@@ -14,8 +14,3 @@ use Socarrat\Core\Event;
 class AppStartEvent extends Event {
 	static protected array $listeners;
 }
-
-/** Serve the client */
-AppStartEvent::on(0, function(App $app) {
-	$app->router->handleRequest();
-});

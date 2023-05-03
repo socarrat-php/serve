@@ -10,12 +10,14 @@ namespace Socarrat\Core;
 
 class HttpRequest {
 	public readonly RouteHandler $route;
+	public readonly URI $uri;
 	public readonly array $params;
 	public readonly string $method;
 	public readonly string $contentType;
 
-	public function __construct(RouteHandler $route, string $method, string $contentType, $params = array()) {
+	public function __construct(RouteHandler $route, URI $uri, string $method, string $contentType, $params = array()) {
 		$this->route = $route;
+		$this->uri = $uri;
 		$this->params = $params;
 		$this->method = $method;
 		$this->contentType = $contentType;

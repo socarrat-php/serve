@@ -90,17 +90,17 @@ class Router {
 	}
 
 	/**
-	 * Finds a route using the given path.
+	 * Finds a route using the given URI.
 	 *
-	 * @param string $route The requested path.
+	 * @param URI $route The requested URI.
 	 * @return ?RouteHandler The route callback if the route has been found.
 	 */
-	public function find(?string $route): ?RouteHandler {
-		if ($route === null) {
+	public function find(URI $uri): ?RouteHandler {
+		if ($uri === null) {
 			return null;
 		}
 
-		$segments = Router::splitPath($route);
+		$segments = Router::splitPath($uri->path);
 		$branch =& $this->handlers;
 
 		foreach ($segments as $segment) {
@@ -131,11 +131,13 @@ class Router {
 	}
 
 	public function handleRequest(): ?HttpResponse {
-		$handler = $this->find($_SERVER["REQUEST_URI"]);
+		$uri = URI::fromRequest();
+		$handler = $this->find($uri);
 
 		if (isset($handler)) {
 			$req = new HttpRequest(
 				/* Handler */ $handler,
+				/* URI     */ $uri,
 				/* Method  */ trim($_SERVER["REQUEST_METHOD"]),
 				/* Mime    */ !empty($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : "",
 				/* Params  */ $handler->parseParams($_SERVER["REQUEST_URI"])
@@ -162,24 +164,42 @@ class Router {
 	/**
 	 * Splits a path using slashes.
 	 *
+	 * If the path contains a querystring and/or a fragment, they'll be ignored.
+	 * URL-encoded values will be decoded.
+	 *
 	 * Examples:
-	 * * `"/admin/blogs/new"` becomes `array("/admin", "/blogs", "/new")`
-	 * * `"/about-us/"` becomes `array("/about-us", "/")`
-	 * * `"/"` becomes `array()`
+	 * * `"/admin/blogs/new"` => `array("/admin", "/blogs", "/new")`
+	 * * `"/about-us/"` => `array("/about-us", "/")`
+	 * * `"/greet/Alice?query=ignored#fragment"` => `array("/greet", "/Alice")`
+	 * * `"/greet/Alice?query=ignored#fragment"` => `array("/greet", "/Alice")`
+	 * * `"/"` => `array()`
+	 *
+	 * @return array The array with path segments
 	 */
-	public static function splitPath(string $route): array {
-		if ($route == "/") {
-			return array();
+	public static function splitPath(string $path): array {
+		if ($path == "/") {
+			// Shortcut
+			return array("/");
 		}
 
-		$split = str_split($route);
+		$pathLen = strlen($path);
+
+		// Split the path based on slashes.
+		// Parse path using parse_url to be sure that we only have the URL path
+		$split = str_split(parse_url($path, PHP_URL_PATH));
+
 		$path = array();
 		$slashIndexes = array_keys($split, "/");
 
 		foreach ($slashIndexes as $i => $idx) {
-			$nextIdx = $slashIndexes[$i + 1] ?? strlen($route);
+			$nextIdx = $slashIndexes[$i + 1] ?? $pathLen;
 			$size = $nextIdx - $idx;
 			array_push($path, join(array_slice($split, $idx, $size)));
+		}
+
+		// Decode each part
+		foreach ($path as $i => $segment) {
+			$path[$i] = urldecode($segment);
 		}
 
 		return $path;

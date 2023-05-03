@@ -16,6 +16,5 @@ class HttpResponseEvent extends Event {
 }
 
 HttpResponseEvent::on(9999, function(HttpRequest $req, HttpResponse $res) {
-	$res->setHeader("X-Powered-By", "Socarrat");
 	$res->send();
 });
