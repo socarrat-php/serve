@@ -1,10 +1,4 @@
 <?php
-/**
- * Event.php: Contains the socarrat event base class.
- *
- * @author Romein van Buren
- * @license MIT
- */
 
 namespace Socarrat\Core;
 

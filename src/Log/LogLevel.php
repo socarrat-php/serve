@@ -1,10 +1,4 @@
 <?php
-/**
- * LogLevel.php
- *
- * @author Romein van Buren
- * @license MIT
- */
 
 namespace Socarrat\Core\Log;
 

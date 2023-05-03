@@ -1,10 +1,4 @@
 <?php
-/**
- * Hello world example using Socarrat
- *
- * @author Romein van Buren
- * @license MIT
- */
 
 declare(strict_types=1);
 require __DIR__ . '/../../vendor/autoload.php';

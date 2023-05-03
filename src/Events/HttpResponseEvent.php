@@ -1,10 +1,4 @@
 <?php
-/**
- * HttpResponseEvent.php
- *
- * @author Romein van Buren
- * @license MIT
- */
 
 namespace Socarrat\Core\Events;
 use Socarrat\Core\Event;

@@ -1,10 +1,4 @@
 <?php
-/**
- * Router.php: Contains the HTTP router.
- *
- * @author Romein van Buren
- * @license MIT
- */
 
 namespace Socarrat\Core;
 use Socarrat\Core\Events\HttpRequestEvent;

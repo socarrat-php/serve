@@ -1,10 +1,4 @@
 <?php
-/**
- * App.php
- *
- * @author Romein van Buren
- * @license MIT
- */
 
 namespace Socarrat\Core;
 use Socarrat\Core\Events\AppFinishedEvent;

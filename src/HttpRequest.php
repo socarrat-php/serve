@@ -1,10 +1,4 @@
 <?php
-/**
- * HttpRequest.php
- *
- * @author Romein van Buren
- * @license MIT
- */
 
 namespace Socarrat\Core;
 

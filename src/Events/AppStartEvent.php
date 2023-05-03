@@ -1,10 +1,4 @@
 <?php
-/**
- * AppStartEvent.php
- *
- * @author Romein van Buren
- * @license MIT
- */
 
 namespace Socarrat\Core\Events;
 use Socarrat\Core\App;

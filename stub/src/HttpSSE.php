@@ -1,10 +1,4 @@
 <?php
-/**
- * HttpSSE.php: Server-Sent Events.
- *
- * @author Romein van Buren
- * @license MIT
- */
 
 namespace Socarrat\Core;
 

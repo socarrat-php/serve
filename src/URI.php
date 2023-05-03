@@ -1,10 +1,4 @@
 <?php
-/**
- * URI.php: Uniform Resource Identifier parsing
- *
- * @author Romein van Buren
- * @license MIT
- */
 
 namespace Socarrat\Core;
 

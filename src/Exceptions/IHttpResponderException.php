@@ -1,10 +1,4 @@
 <?php
-/**
- * IHttpResponderException.php
- *
- * @author Romein van Buren
- * @license MIT
- */
 
 namespace Socarrat\Core\Exceptions;
 use Socarrat\Core\HttpRequest;
