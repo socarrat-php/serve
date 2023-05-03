@@ -73,10 +73,6 @@ class URI {
 	 */
 	public string $fragment = "";
 
-	public function __construct(string $uri) {
-		// var_dump(parse_url($uri));
-	}
-
 	/**
 	 * Builds the URI of the current request using `$_SERVER`.
 	 *
@@ -85,7 +81,7 @@ class URI {
 	 * @return URI The URI object that corresponds with the request.
 	 */
 	public static function fromRequest(): URI {
-		$uri = new static("");
+		$uri = new static;
 		$uri->scheme = @$_SERVER["HTTPS"] == "on" ? "https" : "http";
 		$uri->hostname = parse_url($_SERVER["HTTP_HOST"] ?? "", PHP_URL_HOST);
 		$uri->port = $_SERVER["SERVER_PORT"] ?? 80;
