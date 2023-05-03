@@ -75,6 +75,18 @@ class HttpResponse {
 		return $this;
 	}
 
+	/**
+	 * Sends the given HTML to the client and sets the content type to `text/html`.
+	 *
+	 * @param string $html The HTML to render
+	 */
+	public function html(string $html = "") {
+		$this->body = $html;
+		$this->bodySet = true;
+		$this->setHeader("Content-Type", "text/html");
+		return $this;
+	}
+
 	/** Starts an SSE connection. */
 	// public function sse(): HttpSseServer {
 	// 	$this->bodySet = true;
