@@ -1,9 +1,9 @@
 <?php
 
 namespace Socarrat\Serve;
-use Socarrat\Events\Events\AppFinishedEvent;
-use Socarrat\Events\Events\AppStartEvent;
-use Socarrat\Events\Events\HttpResponseEvent;
+use Socarrat\Serve\Events\AppFinishedEvent;
+use Socarrat\Serve\Events\AppStartEvent;
+use Socarrat\Serve\Events\HttpResponseEvent;
 use Socarrat\Logging\Logger;
 
 /** The application. */
