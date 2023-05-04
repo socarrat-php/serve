@@ -4,23 +4,32 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4aa1585e2859d58fcc4ed4e1e513d845",
+    "content-hash": "15b2014f3b70fb2c4ef92fd5d6c0809c",
     "packages": [
         {
             "name": "socarrat/events",
-            "version": "dev-main",
+            "version": "v0.1.0",
             "source": {
                 "type": "git",
-                "url": "../socarrat-events",
-                "reference": "881597f8758ad0b6d84b73d5398bd775e7d9fe93"
+                "url": "https://github.com/socarrat-php/events.git",
+                "reference": "a4c0c0e50e8670067bed47c9726a167cd2f74dbe"
             },
-            "default-branch": true,
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/socarrat-php/events/zipball/a4c0c0e50e8670067bed47c9726a167cd2f74dbe",
+                "reference": "a4c0c0e50e8670067bed47c9726a167cd2f74dbe",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "Socarrat\\Events\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -30,8 +39,18 @@
                     "email": "romein@vburen.nl"
                 }
             ],
-            "description": "The Socarrat event library contains the base for your event dispatchers.",
-            "time": "2023-05-04T11:58:20+00:00"
+            "description": "Simple event/hook system. Suited for all types of PHP projects.",
+            "keywords": [
+                "HOOK",
+                "event",
+                "events",
+                "hooks"
+            ],
+            "support": {
+                "issues": "https://github.com/socarrat-php/events/issues",
+                "source": "https://github.com/socarrat-php/events/tree/v0.1.0"
+            },
+            "time": "2023-05-04T16:17:32+00:00"
         },
         {
             "name": "socarrat/logging",
@@ -65,7 +84,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "socarrat/events": 20,
         "socarrat/logging": 20
     },
     "prefer-stable": false,
