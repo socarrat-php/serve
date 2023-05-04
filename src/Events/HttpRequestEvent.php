@@ -1,7 +1,7 @@
 <?php
 
-namespace Socarrat\Core\Events;
-use Socarrat\Core\Event;
+namespace Socarrat\Events\Events;
+use Socarrat\Events\Event;
 
 class HttpRequestEvent extends Event {
 	static protected array $listeners;

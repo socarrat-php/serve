@@ -4,12 +4,70 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "810fa5db1f2338e89ee76d21e0e228bc",
-    "packages": [],
+    "content-hash": "0a2609a941562bc02e3a8c8d0f1a70a4",
+    "packages": [
+        {
+            "name": "socarrat/events",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "../socarrat-events",
+                "reference": "881597f8758ad0b6d84b73d5398bd775e7d9fe93"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Socarrat\\Events\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Romein van Buren",
+                    "email": "romein@vburen.nl"
+                }
+            ],
+            "description": "The Socarrat event library contains the base for your event dispatchers.",
+            "time": "2023-05-04T11:58:20+00:00"
+        },
+        {
+            "name": "socarrat/logging",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "../socarrat-logging",
+                "reference": "634874d611f6dc15f84ad95e0cb0b717cf61eb71"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Socarrat\\Logging\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Romein van Buren",
+                    "email": "romein@vburen.nl"
+                }
+            ],
+            "description": "Socarrat logging handles logging to various places.",
+            "time": "2023-05-04T12:01:04+00:00"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "socarrat/events": 20,
+        "socarrat/logging": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

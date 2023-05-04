@@ -1,8 +1,8 @@
 <?php
 
-namespace Socarrat\Core\Events;
+namespace Socarrat\Events\Events;
 use Socarrat\Core\App;
-use Socarrat\Core\Event;
+use Socarrat\Events\Event;
 
 /** This event is dispatched when App::run is called. */
 class AppStartEvent extends Event {

@@ -1,8 +1,8 @@
 <?php
 
 namespace Socarrat\Core;
-use Socarrat\Core\Events\HttpRequestEvent;
-use Socarrat\Core\Events\HttpResponseEvent;
+use Socarrat\Events\Events\HttpRequestEvent;
+use Socarrat\Events\Events\HttpResponseEvent;
 
 /** Router. */
 class Router {

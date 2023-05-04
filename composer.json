@@ -13,5 +13,19 @@
 			"name": "Romein van Buren",
 			"email": "romein@vburen.nl"
 		}
+	],
+	"require": {
+		"socarrat/events": "dev-main",
+		"socarrat/logging": "dev-main"
+	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "../socarrat-logging"
+		},
+		{
+			"type": "vcs",
+			"url": "../socarrat-events"
+		}
 	]
 }

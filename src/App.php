@@ -1,10 +1,10 @@
 <?php
 
 namespace Socarrat\Core;
-use Socarrat\Core\Events\AppFinishedEvent;
-use Socarrat\Core\Events\AppStartEvent;
-use Socarrat\Core\Events\HttpResponseEvent;
-use Socarrat\Core\Log\Logger;
+use Socarrat\Events\Events\AppFinishedEvent;
+use Socarrat\Events\Events\AppStartEvent;
+use Socarrat\Events\Events\HttpResponseEvent;
+use Socarrat\Logging\Logger;
 
 /** The application. */
 class App {
