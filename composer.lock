@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a2609a941562bc02e3a8c8d0f1a70a4",
+    "content-hash": "4aa1585e2859d58fcc4ed4e1e513d845",
     "packages": [
         {
             "name": "socarrat/events",

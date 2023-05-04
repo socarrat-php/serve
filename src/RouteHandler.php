@@ -1,7 +1,7 @@
 <?php
 
-namespace Socarrat\Core;
-use Socarrat\Core\Exceptions\IHttpResponderException;
+namespace Socarrat\Serve;
+use Socarrat\Serve\Exceptions\IHttpResponderException;
 
 class RouteHandler {
 	protected readonly string $path;

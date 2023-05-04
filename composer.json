@@ -1,11 +1,11 @@
 {
-	"name": "socarrat/core",
-	"description": "The Socarrat core library takes care of basic tasks such as routing and HTTP communication.",
+	"name": "socarrat/serve",
+	"description": "Socarrat Serve takes care of tasks that involve HTTP such as routing and communication.",
 	"type": "library",
 	"license": "MIT",
 	"autoload": {
 		"psr-4": {
-			"Socarrat\\Core\\": "src/"
+			"Socarrat\\Serve\\": "src/"
 		}
 	},
 	"authors": [

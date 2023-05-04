@@ -1,8 +1,8 @@
 <?php
 
-namespace Socarrat\Core\Exceptions;
-use Socarrat\Core\HttpRequest;
-use Socarrat\Core\HttpResponse;
+namespace Socarrat\Serve\Exceptions;
+use Socarrat\Serve\HttpRequest;
+use Socarrat\Serve\HttpResponse;
 
 interface IHttpResponderException {
 	function getResponse(HttpRequest $req): HttpResponse;

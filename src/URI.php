@@ -1,6 +1,6 @@
 <?php
 
-namespace Socarrat\Core;
+namespace Socarrat\Serve;
 
 /**
  * The URI class takes care of parsing Uniform Resource Identifiers.

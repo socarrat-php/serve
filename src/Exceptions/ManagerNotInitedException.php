@@ -1,6 +1,6 @@
 <?php
 
-namespace Socarrat\Core\Exceptions;
+namespace Socarrat\Serve\Exceptions;
 
 class ManagerNotInitedException extends \Exception {
     public function __construct(string $managerName, $code = 0, \Throwable $previous = null) {

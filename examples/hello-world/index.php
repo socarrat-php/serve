@@ -6,12 +6,12 @@ require __DIR__ . '/../../vendor/autoload.php';
 /**
  * Include the dependencies we need.
  * In a bare-bones app, you will probably always need those three.
- * Socarrat\Core\App is the 'glue' that brings all parts of the Socarrat core library together.
+ * Socarrat\Serve\App is the 'glue' that brings all parts of the Socarrat serve library together.
  * The other dependency's names speak for themselves.
  */
-use Socarrat\Core\App;
-use Socarrat\Core\HttpRequest;
-use Socarrat\Core\HttpResponse;
+use Socarrat\Serve\App;
+use Socarrat\Serve\HttpRequest;
+use Socarrat\Serve\HttpResponse;
 
 /** Create an App instance. */
 $app = new App();

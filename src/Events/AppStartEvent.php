@@ -1,7 +1,7 @@
 <?php
 
 namespace Socarrat\Events\Events;
-use Socarrat\Core\App;
+use Socarrat\Serve\App;
 use Socarrat\Events\Event;
 
 /** This event is dispatched when App::run is called. */

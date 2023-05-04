@@ -1,6 +1,6 @@
 <?php
 
-namespace Socarrat\Core;
+namespace Socarrat\Serve;
 
 /**
  * Server-Sent Events server.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Socarrat\Core;
+namespace Socarrat\Serve;
 
 /** Represents an HTTP response. */
 class HttpResponse {

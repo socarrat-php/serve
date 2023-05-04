@@ -1,6 +1,6 @@
 <?php
 
-namespace Socarrat\Core;
+namespace Socarrat\Serve;
 use Socarrat\Events\Events\AppFinishedEvent;
 use Socarrat\Events\Events\AppStartEvent;
 use Socarrat\Events\Events\HttpResponseEvent;
