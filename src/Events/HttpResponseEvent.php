@@ -1,6 +1,6 @@
 <?php
 
-namespace Socarrat\Events\Events;
+namespace Socarrat\Serve\Events;
 use Socarrat\Events\Event;
 use Socarrat\Serve\HttpRequest;
 use Socarrat\Serve\HttpResponse;

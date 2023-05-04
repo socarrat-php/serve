@@ -1,6 +1,6 @@
 <?php
 
-namespace Socarrat\Events\Events;
+namespace Socarrat\Serve\Events;
 use Socarrat\Events\Event;
 
 class AppFinishedEvent extends Event {
