@@ -8,12 +8,12 @@ namespace Socarrat\Serve;
  * ## URI design
  *
  * ```
- * https://admin:welkom2018@mozilla.org:9090/view_page?page=about&action=edit#confirm
- * -----   ----- ---------- ----------- -------------- ---------- ----------- -------
- * |       |     |          |           |   |          |          |           |
- * |       |     |          |           |   |          |          |           $fragment
- * $scheme |     $password  $hostname   |   $path      |          $query["action"] = "edit"
- *         $username                    $port          $query["page"] = "about"
+ * https://admin:welkom2020@hofvantwente.nl:9090/view_page?page=about&action=edit#confirm
+ * -----   ----- ---------- --------------- ---- --------- ---------- ---------- -----------
+ * |       |     |          |               |    |         |          |          |
+ * |       |     |          |               |    |         |          |          $fragment
+ * $scheme |     $password  $hostname       |    $path     |          $query["action"] = "edit"
+ *         $username                        $port          $query["page"] = "about"
  * ```
  */
 class URI {
