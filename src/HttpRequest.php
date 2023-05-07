@@ -18,6 +18,7 @@ class HttpRequest {
 	}
 
 	public function body() {
+		// @todo ??
 		if ($this->method == 'GET') {
 			return '';
 		}

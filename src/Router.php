@@ -4,15 +4,8 @@ namespace Socarrat\Serve;
 use Socarrat\Serve\Events\HttpRequestEvent;
 use Socarrat\Serve\Events\HttpResponseEvent;
 
-/** Router. */
 class Router {
-	/**
-	 * Tree array of request handlers.
-	 * @todo explain how this works
-	 */
 	protected $handlers;
-
-	/** True if a response has been rendered, false otherwise. */
 	protected bool $responseRendered;
 
 	function __construct() {
@@ -24,9 +17,6 @@ class Router {
 		});
 	}
 
-	/**
-	 * Registers a route.
-	 */
 	public function on(string $route, array $methods, callable $callback) {
 		$segments = Router::splitPath($route);
 		$branch =& $this->handlers;
@@ -38,57 +28,26 @@ class Router {
 		$branch[""] = new RouteHandler($route, $methods, $callback);
 	}
 
-	/**
-	 * Shorthand method to register a GET route.
-	 *
-	 * Equivalent to `Router::on($route, array("GET"), $callback)`
-	 */
 	public function get($route, $callback) {
 		return $this->on($route, array("GET"), $callback);
 	}
 
-	/**
-	 * Shorthand method to register a GET route.
-	 *
-	 * Equivalent to `Router::on($route, array("POST"), $callback)`
-	 */
 	public function post($route, $callback) {
 		return $this->on($route, array("POST"), $callback);
 	}
 
-	/**
-	 * Shorthand method to register a GET route.
-	 *
-	 * Equivalent to `Router::on($route, array("PUT"), $callback)`
-	 */
 	public function put($route, $callback) {
 		return $this->on($route, array("PUT"), $callback);
 	}
 
-	/**
-	 * Shorthand method to register a GET route.
-	 *
-	 * Equivalent to `Router::on($route, array("PATCH"), $callback)`
-	 */
 	public function patch($route, $callback) {
 		return $this->on($route, array("PATCH"), $callback);
 	}
 
-	/**
-	 * Shorthand method to register a GET route.
-	 *
-	 * Equivalent to `Router::on($route, array("DELETE"), $callback)`
-	 */
 	public function delete($route, $callback) {
 		return $this->on($route, array("DELETE"), $callback);
 	}
 
-	/**
-	 * Finds a route using the given URI.
-	 *
-	 * @param URI $route The requested URI.
-	 * @return ?RouteHandler The route callback if the route has been found.
-	 */
 	public function find(URI $uri): ?RouteHandler {
 		if ($uri === null) {
 			return null;
@@ -150,26 +109,10 @@ class Router {
 		return null;
 	}
 
-	/** Returns true if a response has been rendered, false otherwise. */
 	public function responseSent(): bool {
 		return $this->responseRendered;
 	}
 
-	/**
-	 * Splits a path using slashes.
-	 *
-	 * If the path contains a querystring and/or a fragment, they'll be ignored.
-	 * URL-encoded values will be decoded.
-	 *
-	 * Examples:
-	 * * `"/admin/blogs/new"` => `array("/admin", "/blogs", "/new")`
-	 * * `"/about-us/"` => `array("/about-us", "/")`
-	 * * `"/greet/Alice?query=ignored#fragment"` => `array("/greet", "/Alice")`
-	 * * `"/greet/Alice?query=ignored#fragment"` => `array("/greet", "/Alice")`
-	 * * `"/"` => `array()`
-	 *
-	 * @return array The array with path segments
-	 */
 	public static function splitPath(string $path): array {
 		if ($path == "/") {
 			// Shortcut

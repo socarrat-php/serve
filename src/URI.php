@@ -2,20 +2,6 @@
 
 namespace Socarrat\Serve;
 
-/**
- * The URI class takes care of parsing Uniform Resource Identifiers.
- *
- * ## URI design
- *
- * ```
- * https://admin:welkom2020@hofvantwente.nl:9090/view_page?page=about&action=edit#confirm
- * -----   ----- ---------- --------------- ---- --------- ---------- ---------- -----------
- * |       |     |          |               |    |         |          |          |
- * |       |     |          |               |    |         |          |          $fragment
- * $scheme |     $password  $hostname       |    $path     |          $query["action"] = "edit"
- *         $username                        $port          $query["page"] = "about"
- * ```
- */
 class URI {
 	/**
 	 * The URI scheme.

@@ -1,1 +1,4 @@
-# Socarrat Serve
+# Socarrat\Serve
+
+Flexible PHP router library.
+
