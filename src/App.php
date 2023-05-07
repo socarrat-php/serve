@@ -4,28 +4,10 @@ namespace Socarrat\Serve;
 use Socarrat\Serve\Events\AppFinishedEvent;
 use Socarrat\Serve\Events\AppStartEvent;
 use Socarrat\Serve\Events\HttpResponseEvent;
-use Socarrat\Logging\Logger;
 
-/** The application. */
 class App {
-	/** Application router. */
 	public Router $router;
-
-	/** Application logger. */
-	public Logger $logger;
-
-	/**
-	 * Whether to send the Server-Timing header for testing purposes.
-	 *
-	 * If true, a Server-Timing header will be sent with each request, e.g. `Server-Timing: exec;dur=2.775166`.
-	 */
 	public bool $serverTiming = true;
-
-	/**
-	 * The value of the X-Powered-By header.
-	 *
-	 * If you set this to `""`, no custom X-Powered-By will be sent: instead something like `PHP/8.2.0`.
-	 */
 	public string $poweredBy = "Socarrat";
 
 	/**
@@ -45,11 +27,6 @@ class App {
 		$this->router = new Router();
 	}
 
-	/**
-	 * Run the app.
-	 *
-	 * Just before an HTTP response has been sent, {@link App::$hrtStop} is set to calculate the execution time using {@link App::$hrtStart}.
-	 */
 	public function run() {
 		AppStartEvent::on(0, function(App $app) {
 			// Serve the client!
@@ -88,13 +65,6 @@ class App {
 		AppFinishedEvent::dispatch($this);
 	}
 
-	/**
-	 * Returns the time in milliseconds that the application took to send a response.
-	 *
-	 * This value is calculated by subtracting {@link App::$hrtStop} from {@link App::$hrtStart}.
-	 *
-	 * @return float Execution time in milliseconds, or -1 if the execution has not yet terminated.
-	 */
 	public function getExecTime(): float {
 		if (!isset($this->hrtStop)) {
 			return -1;

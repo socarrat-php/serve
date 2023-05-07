@@ -10,7 +10,7 @@ Registers a route.
 |----------------|------------|---------------|----------------------------------------------------------------------------------------------------|
 | `$route`       | `string`   | -             | The route name to register, possibly with one or more route parameters.                            |
 | `$methods`     | `array`    | -             | An array of allowed HTTP methods, e.g. `["GET", "DELETE"]                                          |
-| `$methods`     | `callable` | -             | The callback that is called when the route is requested. It receives the HttpRequest as parameter. |
+| `$callback`    | `callable` | -             | The callback that is called when the route is requested. It receives the HttpRequest as parameter. |
 
 ## `public function get($route, $callback)`
 

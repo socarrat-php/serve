@@ -18,22 +18,18 @@ class RouteHandler {
 		$this->callback = $callback;
 	}
 
-	/** Returns the route handler path. */
 	public function getPath() {
 		return $this->path;
 	}
 
-	/** Returns the route handler path segments. */
 	public function getPathSegments() {
 		return $this->pathSegments;
 	}
 
-	/** Returns the array of methods the route handler accepts. */
 	public function getMethods() {
 		return $this->methods;
 	}
 
-	/** Returns true if this handler can handle the given method, false otherwise. */
 	public function canHandleMethod(string $method) {
 		foreach ($this->methods as $m) {
 			if (strcasecmp($method, $m) == 0) {
@@ -43,7 +39,6 @@ class RouteHandler {
 		return false;
 	}
 
-	/** Executes the route handler. */
 	public function execute(HttpRequest $req): ?HttpResponse {
 		if (!is_callable($this->callback)) {
 			return null;
@@ -66,7 +61,6 @@ class RouteHandler {
 		}
 	}
 
-	/** Parses path params using the given path and returns them in the form of an associative array. */
 	public function parseParams(string $path): array {
 		$pathSegments = Router::splitPath($path);
 		$parsedParams = array();
@@ -76,10 +70,6 @@ class RouteHandler {
 		return $parsedParams;
 	}
 
-	/**
-	 * Creates an associative array containing all parameters in the defined route path.
-	 * @return array segment index => param name
-	 */
 	public static function getRouteParamMap(array $pathSegments): array {
 		$paramMap = array();
 		foreach ($pathSegments as $idx => $segment) {
