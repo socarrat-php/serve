@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "15b2014f3b70fb2c4ef92fd5d6c0809c",
+    "content-hash": "f418090284a50f192d4e2cd2918f6743",
     "packages": [
         {
             "name": "socarrat/events",
@@ -54,19 +54,25 @@
         },
         {
             "name": "socarrat/logging",
-            "version": "dev-main",
+            "version": "v0.1.0",
             "source": {
                 "type": "git",
-                "url": "../socarrat-logging",
-                "reference": "634874d611f6dc15f84ad95e0cb0b717cf61eb71"
+                "url": "https://github.com/socarrat-php/logging.git",
+                "reference": "2474b7a0c63dfc1d19958021e97e1171ca620943"
             },
-            "default-branch": true,
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/socarrat-php/logging/zipball/2474b7a0c63dfc1d19958021e97e1171ca620943",
+                "reference": "2474b7a0c63dfc1d19958021e97e1171ca620943",
+                "shasum": ""
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "Socarrat\\Logging\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -76,16 +82,18 @@
                     "email": "romein@vburen.nl"
                 }
             ],
-            "description": "Socarrat logging handles logging to various places.",
-            "time": "2023-05-04T12:01:04+00:00"
+            "description": "Robust logging library for every application.",
+            "support": {
+                "issues": "https://github.com/socarrat-php/logging/issues",
+                "source": "https://github.com/socarrat-php/logging/tree/v0.1.0"
+            },
+            "time": "2023-05-07T10:36:23+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "socarrat/logging": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -16,12 +16,6 @@
 	],
 	"require": {
 		"socarrat/events": "^0.1.0",
-		"socarrat/logging": "dev-main"
-	},
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "../socarrat-logging"
-		}
-	]
+		"socarrat/logging": "^0.1.0"
+	}
 }
