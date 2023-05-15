@@ -10,9 +10,9 @@ Flexible PHP router library.
 - [x] [Imperative](https://en.wikipedia.org/wiki/Imperative_programming) route declaration.
 - [x] Similar [Express.js](https://expressjs.com/) for Node or [`ServeMux`](https://pkg.go.dev/net/http#ServeMux) for Go.
 
-## [Documentation](./docs/)
+## [Documentation](./docs/readme.md)
 
-[Read the documentation here](./docs/).
+[Read the documentation here](./docs/readme.md).
 
 ## Copyright
 
