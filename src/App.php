@@ -33,17 +33,17 @@ class App {
 			$app->router->handleRequest();
 		});
 
-		HttpResponseEvent::on(9990, function(HttpRequest $req, HttpResponse $res) {
+		HttpResponseEvent::on(9990, function(HttpRequest $req, HttpResponder $res) {
 			$this->hrtStop = hrtime(true);
 
 			// Set server timing header.
 			if ($this->serverTiming) {
-				$res->setHeader("Server-Timing", "exec;dur=".$this->getExecTime());
+				$res->header("Server-Timing", "exec;dur=".$this->getExecTime());
 			}
 
 			// Set X-Powered-By header
 			if (($this->poweredBy ?? "") != "") {
-				$res->setHeader("X-Powered-By", $this->poweredBy);
+				$res->header("X-Powered-By", $this->poweredBy);
 			}
 		});
 

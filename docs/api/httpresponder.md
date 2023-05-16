@@ -1,8 +1,8 @@
-# `class Socarrat\Serve\HttpResponse`
+# `class Socarrat\Serve\HttpResponder`
 
-Represents an HTTP response.
+Contains methods used to respond to an HTTP request.
 
-## `public function setStatusCode(int $statusCode)`
+## `public function status(int $statusCode)`
 
 Sets the status code for the response.
 
@@ -10,7 +10,7 @@ Sets the status code for the response.
 |----------------|-------|---------------|-------------------------|
 | `$statusCode`  | `int` | -             | The status code to set. |
 
-## `public function setHeader(string $name, string $value)`
+## `public function header(string $name, string $value)`
 
 Sets a header key/value pair for the response.
 
@@ -18,6 +18,14 @@ Sets a header key/value pair for the response.
 |----------------|----------|---------------|-------------------|
 | `$name`        | `string` | -             | The header name.  |
 | `$value`       | `string` | -             | The header value. |
+
+## `public function echo(mixed $body)`
+
+Sends the given value to the client.
+
+| Parameter name | Type    | Default value | Description         |
+|----------------|---------|---------------|---------------------|
+| `$body`        | `mixed` | -             | The body to render. |
 
 ## `public function text(string $text = "")`
 
@@ -43,6 +51,10 @@ Sends the given HTML to the client and sets the content type to `text/html`.
 |----------------|----------|---------------|---------------------|
 | `$html`        | `string` | `""`          | The HTML to render. |
 
-## `public function send()`
+## `public function file(string $fname)`
 
-Sends the response. **Warning:** do not call this in your route definitions!
+Reads the file using the given file name, sends it to the client, and tries to guess the value for the `Content-Type` header if not set yet.
+
+| Parameter name | Type     | Default value | Description                     |
+|----------------|----------|---------------|---------------------------------|
+| `$fname`       | `string` | -             | The name of the file to render. |

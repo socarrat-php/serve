@@ -2,8 +2,8 @@
 
 namespace Socarrat\Serve\Exceptions;
 use Socarrat\Serve\HttpRequest;
-use Socarrat\Serve\HttpResponse;
+use Socarrat\Serve\HttpResponder;
 
 interface IHttpResponderException {
-	function getResponse(HttpRequest $req): HttpResponse;
+	function getResponse(HttpRequest $req): HttpResponder;
 }

@@ -11,7 +11,7 @@ require __DIR__ . '/../../vendor/autoload.php';
  */
 use Socarrat\Serve\App;
 use Socarrat\Serve\HttpRequest;
-use Socarrat\Serve\HttpResponse;
+use Socarrat\Serve\HttpResponder;
 
 /** Create an App instance. */
 $app = new App();
@@ -21,17 +21,12 @@ $app = new App();
  *
  * This route only listens to GET requests. To change this, you could change `router->get` to use another method.
  */
-$app->router->get("/greet/:name", function(HttpRequest $req) {
-	/**
-	 * Create a new HTTP response
-	 */
-	$res = new HttpResponse();
-
+$app->router->get("/greet/:name", function(HttpRequest $req, HttpResponder $res) {
 	/**
 	 * Set the status code to teapot.
 	 * See: https://en.wikipedia.org/wiki/Hyper_Text_Coffee_Pot_Control_Protocol
 	 */
-	$res->setStatusCode(418);
+	$res->status(418);
 
 	/**
 	 * Send some JSON.
@@ -43,14 +38,19 @@ $app->router->get("/greet/:name", function(HttpRequest $req) {
 	]);
 
 	/**
-	 * Return the response.
-	 */
-	return $res;
-
-	/**
 	 * We could write this whole function body as a one-liner:
-	 * `return (new HttpResponse())->setStatusCode(418)->json([ "hello" => $req->params["name"], "headers" => $req->headers ]);`
+	 *
+	 *   $res->status(418)->json([ "hello" => $req->params["name"], "headers" => $req->headers ]);
+	 *
+	 * The method that writes the response is always the last in the chain.
 	 */
+});
+
+/**
+ * This route listens to POST request. It just sends the request body back to the client.
+ */
+$app->router->post("/echo", function (HttpRequest $req, HttpResponder $res) {
+	$res->file("php://input");
 });
 
 /**

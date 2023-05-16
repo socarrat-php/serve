@@ -30,13 +30,14 @@ Returns true if this handler can handle the given method, false otherwise.
 |----------------|----------|---------------|----------------------------------|
 | `$method`      | `string` | -             | The method name, e.g. `"POST"`.  |
 
-## `public function execute(HttpRequest $req): ?HttpResponse`
+## `public function execute(HttpRequest $req): ?HttpResponder`
 
 Executes the route handler.
 
-| Parameter name | Type                              | Default value | Description  |
-|----------------|-----------------------------------|---------------|--------------|
-| `$req`         | [`HttpRequest`](./httprequest.md) | -             | The request. |
+| Parameter name | Type                                  | Default value | Description    |
+|----------------|---------------------------------------|---------------|----------------|
+| `$req`         | [`HttpRequest`](./httprequest.md)     | -             | The request.   |
+| `$res`         | [`HttpResponder`](./httpresponder.md) | -             | The responder. |
 
 ## `public function parseParams(string $path): array`
 

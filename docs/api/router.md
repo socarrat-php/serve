@@ -65,7 +65,7 @@ Finds a route using the given URI. Returns the route callback if the route has b
 |----------------|----------------------------------|---------------|----------------------------------------|
 | `$uri`         | [`URI`](#class-socarratserveuri) | -             | The request URI to find the route for. |
 
-## `public function handleRequest(): ?HttpResponse`
+## `public function handleRequest(): ?HttpResponder`
 
 Handles the current request.
 

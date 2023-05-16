@@ -11,10 +11,6 @@ class Router {
 	function __construct() {
 		$this->handlers = array();
 		$this->responseRendered = false;
-
-		HttpResponseEvent::on(0, function() {
-			$this->responseRendered = true;
-		});
 	}
 
 	public function on(string $route, array $methods, callable $callback) {
@@ -83,7 +79,7 @@ class Router {
 		return $branch[""] ?? null;
 	}
 
-	public function handleRequest(): ?HttpResponse {
+	public function handleRequest(): bool {
 		$uri = URI::fromRequest();
 		$handler = $this->find($uri);
 
@@ -96,18 +92,17 @@ class Router {
 				/* Headers */ getallheaders(),
 				/* Params  */ $handler->parseParams($_SERVER["REQUEST_URI"])
 			);
+			$res = new HttpResponder();
 
 			HttpRequestEvent::dispatch($req);
-			$res = $handler->execute($req);
+			$handler->execute($req, $res);
 
-			if (isset($res)) {
-				HttpResponseEvent::dispatch($req, $res);
-			}
-
-			return $res;
+			HttpResponseEvent::dispatch($req, $res);
+			$this->responseRendered = true;
+			return true;
 		}
 
-		return null;
+		return false;
 	}
 
 	public function responseSent(): bool {

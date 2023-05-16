@@ -39,17 +39,17 @@ class RouteHandler {
 		return false;
 	}
 
-	public function execute(HttpRequest $req): ?HttpResponse {
+	public function execute(HttpRequest $req, HttpResponder $res): bool {
 		if (!is_callable($this->callback)) {
-			return null;
+			return false;
 		}
 		if (!$this->canHandleMethod($req->method)) {
-			return null;
+			return false;
 		}
 
 		try {
-			$res = ($this->callback)($req);
-			return $res;
+			($this->callback)($req, $res);
+			return true;
 		}
 		catch (\Exception $e) {
 			if (in_array("IHttpResponderException", class_implements($e))) {
@@ -57,7 +57,7 @@ class RouteHandler {
 				return $res;
 			}
 			// @todo: error
-			return (new HttpResponse())->setStatusCode(500)->json([ "ok" => false ]);
+			return $res->setStatusCode(500)->json([ "ok" => false ]);
 		}
 	}
 
