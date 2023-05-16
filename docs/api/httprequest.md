@@ -6,6 +6,7 @@ Represents an HTTP request.
 |----------------------|-------------------------------------|------------------------------------------------------|
 | `$route`             | [`RouteHandler`](./routehandler.md) | The route handler that handles the requested route.  |
 | `$uri`               | [`URI`](./uri.md)                   | The request URI.                                     |
+| `$headers`           | `array`                             | Associative array with request headers. All the header names are converted to lowercase for consistency and ease of access. |
 | `$params`            | `array`                             | Associative array with route params (NOT the query). |
 | `$method`            | `string`                            | The request method.                                  |
 | `$contentType`       | `string`                            | The content type.                                    |

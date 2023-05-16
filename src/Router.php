@@ -93,6 +93,7 @@ class Router {
 				/* URI     */ $uri,
 				/* Method  */ trim($_SERVER["REQUEST_METHOD"]),
 				/* Mime    */ !empty($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : "",
+				/* Headers */ getallheaders(),
 				/* Params  */ $handler->parseParams($_SERVER["REQUEST_URI"])
 			);
 

@@ -37,7 +37,10 @@ $app->router->get("/greet/:name", function(HttpRequest $req) {
 	 * Send some JSON.
 	 * `$req->params["name"]` gets the `"name"` parameter from the request's param array.
 	 */
-	$res->json([ "hello" => $req->params["name"] ]);
+	$res->json([
+		"hello" => $req->params["name"],
+		"headers" => $req->headers,
+	]);
 
 	/**
 	 * Return the response.
@@ -46,7 +49,7 @@ $app->router->get("/greet/:name", function(HttpRequest $req) {
 
 	/**
 	 * We could write this whole function body as a one-liner:
-	 * `return (new HttpResponse())->setStatusCode(418)->json([ "hello" => $req->params["name"] ]);`
+	 * `return (new HttpResponse())->setStatusCode(418)->json([ "hello" => $req->params["name"], "headers" => $req->headers ]);`
 	 */
 });
 
