@@ -17,9 +17,9 @@ Represents an HTTP request.
 |----------------|-------------------------------------|---------------|------------------------------------------------------|
 | `$route`       | [`RouteHandler`](./routehandler.md) | -             | The route handler that handles the requested route.  |
 | `$uri`         | [`URI`](./uri.md)                   | -             | The request URI.                                     |
-| `$method`      | `callable` | -                      | -             | The request method.                                  |
-| `$contentType` | `callable` | -                      | -             | The content type.                                    |
-| `$params`      | `callable` | -                      | -             | Associative array with route params (NOT the query). |
+| `$method`      | `callable`                          | -             | The request method.                                  |
+| `$contentType` | `callable`                          | -             | The content type.                                    |
+| `$params`      | `callable`                          | -             | Associative array with route params (NOT the query). |
 
 ## `public function body()`
 
