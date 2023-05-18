@@ -6,7 +6,7 @@ Flexible PHP router library.
 
 - [x] Simple yet flexible and powerful.
 - [x] [Event-driven](./docs/events.md).
-- [x] Does routing
+- [x] Does routing and supports route parameters.
 - [x] [Imperative](https://en.wikipedia.org/wiki/Imperative_programming) route declaration.
 - [x] Similar [Express.js](https://expressjs.com/) for Node or [`ServeMux`](https://pkg.go.dev/net/http#ServeMux) for Go.
 

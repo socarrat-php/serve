@@ -6,11 +6,11 @@ The application router that handles incoming HTTP request by looking up the regi
 
 Registers a route.
 
-| Parameter name | Type       | Default value | Description                                                                                        |
-|----------------|------------|---------------|----------------------------------------------------------------------------------------------------|
-| `$route`       | `string`   | -             | The route name to register, possibly with one or more route parameters.                            |
-| `$methods`     | `array`    | -             | An array of allowed HTTP methods, e.g. `["GET", "DELETE"]                                          |
-| `$callback`    | `callable` | -             | The callback that is called when the route is requested. It receives the HttpRequest as parameter. |
+| Parameter name | Type       | Default value | Description |
+|----------------|------------|---------------|-------------|
+| `$route`       | `string`   | -             | The route name to register, possibly with one or more route parameters denoted by a colon (e.g. `/greet/:name` with route parameter `name`). |
+| `$methods`     | `array`    | -             | An array of allowed HTTP methods, e.g. `["GET", "DELETE"]`. |
+| `$callback`    | `callable` | -             | The callback that is called when the route is requested. It receives an [`HttpRequest`](./httprequest.md) as parameter. |
 
 ## `public function get($route, $callback)`
 
