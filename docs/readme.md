@@ -1,4 +1,4 @@
 # Documentation index
 
-- [API reference](./docs/api/readme.md)
-- [Event reference](./docs/events.md)
+- [API reference](./api/readme.md)
+- [Event reference](./events.md)
