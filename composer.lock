@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f418090284a50f192d4e2cd2918f6743",
+    "content-hash": "5e0d4cd2833615f0b1f367c51cbf7304",
     "packages": [
         {
             "name": "socarrat/events",
@@ -54,16 +54,16 @@
         },
         {
             "name": "socarrat/logging",
-            "version": "v0.1.0",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/socarrat-php/logging.git",
-                "reference": "2474b7a0c63dfc1d19958021e97e1171ca620943"
+                "reference": "477329b5f4ff7281c555c764f48b58945f1e3797"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/socarrat-php/logging/zipball/2474b7a0c63dfc1d19958021e97e1171ca620943",
-                "reference": "2474b7a0c63dfc1d19958021e97e1171ca620943",
+                "url": "https://api.github.com/repos/socarrat-php/logging/zipball/477329b5f4ff7281c555c764f48b58945f1e3797",
+                "reference": "477329b5f4ff7281c555c764f48b58945f1e3797",
                 "shasum": ""
             },
             "type": "library",
@@ -85,9 +85,9 @@
             "description": "Robust logging library for every application.",
             "support": {
                 "issues": "https://github.com/socarrat-php/logging/issues",
-                "source": "https://github.com/socarrat-php/logging/tree/v0.1.0"
+                "source": "https://github.com/socarrat-php/logging/tree/v0.2.0"
             },
-            "time": "2023-05-07T10:36:23+00:00"
+            "time": "2023-05-07T11:32:07+00:00"
         }
     ],
     "packages-dev": [],
@@ -98,5 +98,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

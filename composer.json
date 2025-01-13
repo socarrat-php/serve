@@ -16,6 +16,6 @@
 	],
 	"require": {
 		"socarrat/events": "^0.1.0",
-		"socarrat/logging": "^0.1.0"
+		"socarrat/logging": "^0.1.0 || ^0.2.0"
 	}
 }
